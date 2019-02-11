@@ -1,5 +1,6 @@
 h1 {
     text-align: center;
+    font-family: fantasy;
 }
 
 #cart {
@@ -50,9 +51,12 @@ h1 {
 }
 
 #form {
-    width: 75%;
+    width: 20%;
     margin: 0 auto 20px auto;
     font-size: 18px;
+    justify-content: space-around;
+    display: flex;
+    height: 30px;
 }
 
 input {
@@ -63,4 +67,15 @@ input {
 button {
     font-size: 14px;
     padding: 5px 10px;
+    color: #e6efea;
+    background-color: #373a38;
+}
+
+body {
+    background-color: #94baa7;
+    color: #e6efea;
+}
+
+#add {
+    text-align: center;
 }

@@ -19,28 +19,30 @@ var lengths = ["4:46", "4:17", "9:07", "4:09", "4:13"];
 
 function displaySongInfo(){
     // BELOW Use forEach Loop to display the data from each of your arrays in the correct div
-songs.forEach(song){
-    $("#song").append("<p>" + song + "</p>");
-}
-images.forEach(image){
-    $("#image").append("<p>" + image + "</p>");
-}
-artists.forEach(artist){
-    $("#artist").append("<p>" + arist + "</p>");
-}
-links.forEach(link){
-    $("#link").append("<p>" + link + "</p>");
-}
-lengths.forEach(length){
-    $("#length").append("<p>" + song + "</p>");
-}
+songs.forEach(function(song) {
+    $('#songs').append('<p>' + song + '</p>');
+});
+images.forEach(function(image) {
+    $('#images').append('<p>' + '<img src="' + image + '">' + '</p>');
+});
+artists.forEach(function(artist) {
+    $('#artists').append('<p>' + artist + '</p>'); 
+});
+links.forEach(function(link) {
+    $('#links').append('<p>' + '<a href=' + link + '>' + 'Play song' + '</a>' + '</p>'); 
+});
+lengths.forEach(function(length) {
+    $('#lengths').append('<p>' + length + '</p>'); 
+});
 }
 
 function emptySongInfo(){
     $("#songs").empty();
     // Use jQuery to empty all of the remaining divs
-
-
+$("#images").empty();
+$("#artists").empty();
+$("#links").empty();
+$("#lengths").empty();
 }
 
 
