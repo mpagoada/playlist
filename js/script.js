@@ -19,43 +19,57 @@ var lengths = ["4:46", "4:17", "9:07", "4:09", "4:13"];
 
 function displaySongInfo(){
     // BELOW Use forEach Loop to display the data from each of your arrays in the correct div
-songs.forEach(function(song) {
-    $('#songs').append('<p>' + song + '</p>');
-});
-images.forEach(function(image) {
-    $('#images').append('<p>' + '<img src="' + image + '">' + '</p>');
-});
-artists.forEach(function(artist) {
-    $('#artists').append('<p>' + artist + '</p>'); 
-});
-links.forEach(function(link) {
-    $('#links').append('<p>' + '<a href=' + link + '>' + 'Play song' + '</a>' + '</p>'); 
-});
-lengths.forEach(function(length) {
-    $('#lengths').append('<p>' + length + '</p>'); 
-});
+    songs.forEach(function(song) {
+        $('#songs').append('<p>' + song + '</p>');
+    });
+    images.forEach(function(image) {
+        $('#images').append('<p>' + '<img src="' + image + '">' + '</p>');
+    });
+    artists.forEach(function(artist) {
+        $('#artists').append('<p>' + artist + '</p>'); 
+    });
+    links.forEach(function(link) {
+        $('#links').append('<p>' + '<a href=' + link + '>' + 'Play song' + '</a>' + '</p>'); 
+    });
+    lengths.forEach(function(length) {
+        $('#lengths').append('<p>' + length + '</p>'); 
+    });
 }
 
 function emptySongInfo(){
     $("#songs").empty();
     // Use jQuery to empty all of the remaining divs
-$("#images").empty();
-$("#artists").empty();
-$("#links").empty();
-$("#lengths").empty();
+    $("#images").empty();
+    $("#artists").empty();
+    $("#links").empty();
+    $("#lengths").empty();
 }
 
 
 function addSongInfo(){
     // BELOW write the code to add new items to each of the arrays.
-
-
+    var userSong = $("#song").val();
+    songs.push(userSong);
+    var userArtist = $("#artist").val();
+    artists.push(userArtist);
+    var userLength = $("#length").val();
+    lengths.push(userLength);
+    var userImage = $('#image').val();
+    images.push(userImage);
+    var userLink = $('#link').val();
+    links.push(userLink);
+    
+    console.log(songs);
+    console.log(artists);
 }
 
 $("#add").click(function() {
+    console.log('hi');
     emptySongInfo();
     addSongInfo();
     displaySongInfo();
 });
 
 displaySongInfo();
+
+console.log($('#add'));
